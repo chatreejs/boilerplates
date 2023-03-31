@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  uptimekuma:
+  uptime-kuma:
     image: louislam/uptime-kuma:latest
-    container_name: uptimekuma
+    container_name: uptime-kuma
     ports:
       - "3001:3001"
     volumes:
-      - uptimekuma-data:/app/data
+      - uptime-kuma-data:/app/data
     restart: unless-stopped
 
 volumes:
-  uptimekuma-data:
+  uptime-kuma-data:
     driver: local
