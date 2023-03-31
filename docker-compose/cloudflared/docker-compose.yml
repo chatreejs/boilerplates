@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  cloudflared:
+    image: "cloudflare/cloudflared:2023.3.1"
+    container_name: cloudflared
+    networks:
+      - proxy
+    command: tunnel --config /home/nonroot/.cloudflared/config.yml run UUID # replace UUID with your tunnel UUID
+    volumes:
+      - /data/cloudflared:/home/nonroot/.cloudflared/
+    restart: unless-stopped
+
+networks:
+  proxy:
+    driver: bridge
+    external: true
