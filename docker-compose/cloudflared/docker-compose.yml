@@ -4,6 +4,12 @@ services:
   cloudflared:
     image: 'cloudflare/cloudflared:latest'
     container_name: cloudflared
-    network_mode: bridge
+    networks:
+      - tunnel
     command: tunnel --no-autoupdate run --token ${TOKEN} # replace UUID with your tunnel UUID
     restart: unless-stopped
+
+networks:
+  tunnel:
+    driver: bridge
+    external: true
