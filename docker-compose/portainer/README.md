@@ -2,7 +2,7 @@
 
 ## Deployment
 
-1. Copy the `docker-compose.yml` template into your project folder and start the container.
+Copy the `docker-compose.yml` template into your project folder and start the container.
 
 ### Manage local environment
 
